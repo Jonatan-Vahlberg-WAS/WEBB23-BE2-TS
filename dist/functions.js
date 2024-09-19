@@ -82,8 +82,8 @@ function calculateTotalOfCart(items = []) {
         const item = items[i];
         let itemTotal = item.price * item.quantity;
         if (item.isOnSale) {
-            let salePercentage = ((100 - item.salePercentage) / 100);
-            let salePrice = item.price * salePercentage;
+            let salesPercentage = ((100 - item.salesPercentage) / 100);
+            let salePrice = item.price * salesPercentage;
             itemTotal = salePrice * item.quantity;
         }
         let taxRate = 0;
@@ -107,6 +107,18 @@ function calculateTotalOfCart(items = []) {
     return total;
 }
 const items = [{
-    //fyll i med variabler och typer
+        name: "Jacket",
+        price: 200,
+        quantity: 2,
+        isOnSale: false,
+        salesPercentage: 0,
+        category: "clothing"
+    }, {
+        name: "Flashlight",
+        price: 400,
+        quantity: 2,
+        isOnSale: true,
+        salesPercentage: 25,
+        category: "electronics"
     }];
-calculateTotalOfCart(items);
+console.log(calculateTotalOfCart(items));

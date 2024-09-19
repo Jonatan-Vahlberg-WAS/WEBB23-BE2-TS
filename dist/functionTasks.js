@@ -42,6 +42,14 @@ function saveLog(message) {
 function sendNotification(userId, message) {
     // Implementation
 }
+// Uppgift 6:
+// Skapa en funktion `processUserNotification` som tar ett `userId` och ett `message`.
+// Funktionen ska:
+// - Försöka hitta användaren med `findUser`.
+//   - Om användaren hittas, skicka en notifikation med `sendNotification` och returnera en sträng som bekräftar att meddelandet skickades (explicit returtyp).
+//   - Om användaren inte hittas, logga ett felmeddelande med `saveLog` och returnera en sträng som indikerar att användaren inte hittades (använd unionstyp om nödvändigt).
+// - Specificera alla returtyper explicit.
+// - Använd funktionerna `findUser`, `sendNotification`, och `saveLog` i din implementation.
 function processUserNotification(userId, message) {
     // Implementation
 }

@@ -107,7 +107,16 @@ function calculateTotal(price:number, quantity:number, discount:number, taxRate:
     quantity: 20
   }
 
-  function calculateTotalOfCart(items: any[] = []) {
+  type Item = {
+    name: string;
+    price: number;
+    quantity: number;
+    isOnSale: boolean;
+    salesPercentage: number;
+    category: string;
+  }
+
+  function calculateTotalOfCart(items: Item[] = []) {
     let total = 0;
   
     for (let i = 0; i < items.length; i++) {
@@ -115,8 +124,8 @@ function calculateTotal(price:number, quantity:number, discount:number, taxRate:
   
       let itemTotal = item.price * item.quantity;
       if(item.isOnSale){
-        let salePercentage = ((100 - item.salePercentage) / 100)
-        let salePrice = item.price * salePercentage
+        let salesPercentage = ((100 - item.salesPercentage) / 100)
+        let salePrice = item.price * salesPercentage
         itemTotal = salePrice * item.quantity
       }
       let taxRate = 0;
@@ -144,11 +153,21 @@ function calculateTotal(price:number, quantity:number, discount:number, taxRate:
     return total;
   }
   
-  const items: {
-    
-  }[] = [{
-    //fyll i med variabler och typer
+  const items: Item[] = [{
+    name: "Jacket",
+    price: 200,
+    quantity: 2,
+    isOnSale: false,
+    salesPercentage: 0,
+    category: "clothing"
+  },{
+    name: "Flashlight",
+    price: 400,
+    quantity: 2,
+    isOnSale: true,
+    salesPercentage: 25,
+    category: "electronics"
   }]
   
-  calculateTotalOfCart(items)
+console.log(calculateTotalOfCart(items))
 

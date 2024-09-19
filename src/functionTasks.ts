@@ -1,3 +1,9 @@
+type User = {
+    id: number;
+    name: string;
+    email: string;
+};
+
 //! Return types
 
 // Uppgift 1:
@@ -65,11 +71,7 @@ function sendNotification(userId: number, message: string) {
 // - Specificera alla returtyper explicit.
 // - Använd funktionerna `findUser`, `sendNotification`, och `saveLog` i din implementation.
 
-type User = {
-    id: number;
-    name: string;
-    email: string;
-};
+
 
 function processUserNotification(userId: any, message: any) {
     // Implementation
