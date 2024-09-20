@@ -1,3 +1,7 @@
+export type Model = {
+    id: string;
+}
+
 export type Author = {
   firstName: string;
   lastName: string;
@@ -11,3 +15,10 @@ export type Book = {
   author: Author;
   ISBN?: string;
 };
+
+export type ComicBook = Book & {
+    ilustrator: string;
+    inColor: boolean;
+}
+
+export type Work = Book | ComicBook
