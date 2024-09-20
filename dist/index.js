@@ -1,1 +1,2 @@
-import "./functions.js";
+// import "./functions.js"
+import "./functionTasks.js";
