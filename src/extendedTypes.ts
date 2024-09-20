@@ -29,6 +29,9 @@ function sortWorks(a: Work, b: Work, sort: WorkSort) {
     else if(sort === "author-fname") {
         return a.author.firstName.localeCompare(b.author.firstName)
     }
+    else if(sort === "author-lname") {
+        return a.author.lastName.localeCompare(b.author.lastName)
+    }
     return 0
 }
  
@@ -64,4 +67,4 @@ function getComicBooks(inColor?: boolean, sort?: WorkSort) {
 // console.log("All Comicbooks in color:",getComicBooks(true).length)
 // console.log("All Comicbooks in BW: ",getComicBooks(false).length)
 // console.clear()
-console.log("All Comicbooks sorted on author first name: ",getComicBooks(undefined, "author-fname"))
+console.log("All Comicbooks sorted on author first name: ",getComicBooks(undefined, "author-lname"))
