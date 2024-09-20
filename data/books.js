@@ -1,0 +1,113 @@
+export default [
+    {
+      "title": "To Kill a Mockingbird",
+      "description": "A novel about the serious issues of rape and racial inequality told through the eyes of a young girl in the Deep South.",
+      "rating": 4.8,
+      "author": {
+        "firstName": "Harper",
+        "lastName": "Lee",
+        "yearOfBirth": 1926
+      },
+      "ISBN": "978-0-06-112008-4"
+    },
+    {
+      "title": "1984",
+      "description": "A dystopian novel set in a totalitarian society ruled by Big Brother.",
+      "rating": 4.7,
+      "author": {
+        "firstName": "George",
+        "lastName": "Orwell",
+        "yearOfBirth": 1903
+      },
+      "ISBN": "978-0-452-28423-4"
+    },
+    {
+      "title": "Pride and Prejudice",
+      "description": "A romantic novel that charts the emotional development of the protagonist Elizabeth Bennet.",
+      "rating": 4.6,
+      "author": {
+        "firstName": "Jane",
+        "lastName": "Austen",
+        "yearOfBirth": 1775
+      },
+      "ISBN": "978-0-19-953556-9"
+    },
+    {
+      "title": "The Great Gatsby",
+      "description": "A novel about the American dream and the roaring twenties.",
+      "rating": 4.4,
+      "author": {
+        "firstName": "F. Scott",
+        "lastName": "Fitzgerald",
+        "yearOfBirth": 1896
+      },
+      "ISBN": "978-0-7432-7356-5"
+    },
+    {
+      "title": "Moby Dick",
+      "description": "An epic tale of the voyage of the whaling ship Pequod.",
+      "rating": 4.1,
+      "author": {
+        "firstName": "Herman",
+        "lastName": "Melville",
+        "yearOfBirth": 1819
+      },
+      "ISBN": "978-0-14-243724-7"
+    },
+    {
+      "title": "The Catcher in the Rye",
+      "description": "A story about adolescent alienation and loss of innocence in the protagonist Holden Caulfield.",
+      "rating": 4.0,
+      "author": {
+        "firstName": "J.D.",
+        "lastName": "Salinger",
+        "yearOfBirth": 1919
+      },
+      "ISBN": "978-0-316-76948-0"
+    },
+    {
+      "title": "The Lord of the Rings",
+      "description": "An epic fantasy adventure about the quest to destroy the One Ring.",
+      "rating": 4.9,
+      "author": {
+        "firstName": "J.R.R.",
+        "lastName": "Tolkien",
+        "yearOfBirth": 1892
+      },
+      "ISBN": "978-0-618-00222-8"
+    },
+    {
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "description": "A young boy discovers he is a wizard and attends a magical school called Hogwarts.",
+      "rating": 4.8,
+      "author": {
+        "firstName": "J.K.",
+        "lastName": "Rowling",
+        "yearOfBirth": 1965
+      },
+      "ISBN": "978-0-590-35340-3"
+    },
+    {
+      "title": "The Hobbit",
+      "description": "A prelude to the Lord of the Rings, following Bilbo Baggins' adventure.",
+      "rating": 4.7,
+      "author": {
+        "firstName": "J.R.R.",
+        "lastName": "Tolkien",
+        "yearOfBirth": 1892
+      },
+      "ISBN": "978-0-618-00221-1"
+    },
+    {
+      "title": "The Da Vinci Code",
+      "description": "A mystery thriller that involves a symbologist and cryptologist uncovering a religious mystery.",
+      "rating": 4.2,
+      "author": {
+        "firstName": "Dan",
+        "lastName": "Brown",
+        "yearOfBirth": 1964
+      },
+      "ISBN": "978-0-385-50420-8"
+    }
+  ]
+  
