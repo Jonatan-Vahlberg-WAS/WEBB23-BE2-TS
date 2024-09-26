@@ -22,19 +22,97 @@ function getPosts() {
         const response = yield fetch("https://jsonplaceholder.typicode.com/posts");
         if (response.ok) {
             const posts = yield response.json();
-            console.log(posts);
             return posts;
         }
         throw new Error("Unable to get posts");
     });
 }
 //TODO add a get post function that either gets a post or null through promises
+function getPost(postId) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+        if (response.ok) {
+            const post = yield response.json();
+            return post;
+        }
+        return null;
+    });
+}
 //TODO add a new post
+function addPost(post) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield fetch(`https://jsonplaceholder.typicode.com/posts`, {
+            method: "POST",
+            body: JSON.stringify(post),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+            },
+        });
+        if (response.ok) {
+            const post = yield response.json();
+            return post;
+        }
+        throw new Error("Unable to add post");
+    });
+}
 //TODO update a post
+function updatePost(postId, post) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+            method: "PUT",
+            body: JSON.stringify(post),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+            },
+        });
+        if (response.ok) {
+            const post = yield response.json();
+            return post;
+        }
+        throw new Error("Unable to update post");
+    });
+}
 //TODO delete a post
-try {
-    getPosts();
+function deletePost(postId) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+            method: "DELETE",
+        });
+        if (response.ok) {
+            return;
+        }
+        throw new Error("Unable to delete post");
+    });
 }
-catch (error) {
-    console.error(error);
+function main() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const posts = yield getPosts();
+            console.log("Posts", `[${JSON.stringify((posts === null || posts === void 0 ? void 0 : posts[0]) || "", null, 2)}, ...]`);
+            const post = yield getPost(1);
+            console.log("Post", post);
+            const newPost = yield addPost({
+                userId: 1,
+                title: "New Post",
+                body: "New Post Body",
+            });
+            console.log("New Post", newPost);
+            const updatedPost = yield updatePost(1, {
+                userId: 1,
+                title: "Updated Post",
+                body: "Updated Post Body",
+            });
+            console.log("Updated Post", updatedPost);
+            yield deletePost(newPost.id);
+            console.log("Deleted Post", newPost);
+            //get deleted post
+            const deletedPost = yield getPost(newPost.id);
+            console.log("Deleted Post (should be null)", deletedPost);
+        }
+        catch (error) {
+            console.error(error);
+        }
+    });
 }
+// Run the main function
+main();
