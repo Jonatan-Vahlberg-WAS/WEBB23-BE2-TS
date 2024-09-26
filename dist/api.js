@@ -1,13 +1,4 @@
 "use strict";
-/**
- *
- * {
-"userId": 1,
-"id": 1,
-"title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-"body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-},
- */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -17,6 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var HttpMethod;
+(function (HttpMethod) {
+    HttpMethod["GET"] = "GET";
+    HttpMethod["POST"] = "POST";
+    HttpMethod["PUT"] = "PUT";
+    HttpMethod["DELETE"] = "DELETE";
+})(HttpMethod || (HttpMethod = {}));
+const testMethod = HttpMethod.POST;
+console.log(testMethod);
 function getPosts() {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fetch("https://jsonplaceholder.typicode.com/posts");
@@ -98,6 +98,7 @@ function main() {
             });
             console.log("New Post", newPost);
             const updatedPost = yield updatePost(1, {
+                id: 1,
                 userId: 1,
                 title: "Updated Post",
                 body: "Updated Post Body",

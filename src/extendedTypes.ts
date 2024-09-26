@@ -14,7 +14,7 @@ function isComicBook(work: Work): work is ComicBook {
     if((work as ComicBook).ilustrator !== undefined){
         return true
     }
-    if("ilustratorr" in work) { //alternative
+    if("ilustrator" in work) { //alternative
         return true
     }
     return false

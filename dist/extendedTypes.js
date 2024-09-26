@@ -10,7 +10,7 @@ function isComicBook(work) {
     if (work.ilustrator !== undefined) {
         return true;
     }
-    if ("ilustratorr" in work) { //alternative
+    if ("ilustrator" in work) { //alternative
         return true;
     }
     return false;
